@@ -8,8 +8,7 @@ module Spree
       def sign_up
 
         @user = Spree::User.find_by_email(params[:user][:email])
-        @store = Spree::SpreeStore.first
-
+        
 
         if @user.present?
           render "spree/api/users/user_exists", :status => 401 and return
@@ -24,6 +23,7 @@ module Spree
       end
 
       def sign_in
+        @store = Spree::SpreeStore.first
         @user = Spree::User.find_by_email(params[:user][:email])
         if !@user.present? || !@user.valid_password?(params[:user][:password])
           unauthorized
