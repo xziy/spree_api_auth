@@ -8,5 +8,5 @@ end
 child(:ship_address => :ship_address) do
   extends "spree/api/addresses/show"
   
-object @stre  
+object @store  
 end
