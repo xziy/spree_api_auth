@@ -8,7 +8,7 @@ module Spree
       def sign_up
 
         @user = Spree::User.find_by_email(params[:user][:email])
-        @store = Spree::SpreeStores.first
+        @store = Spree::SpreeStore.first
 
 
         if @user.present?
