@@ -8,6 +8,8 @@ module Spree
       def sign_up
 
         @user = Spree::User.find_by_email(params[:user][:email])
+        @store = Spree::SpreeStores.first
+
 
         if @user.present?
           render "spree/api/users/user_exists", :status => 401 and return
