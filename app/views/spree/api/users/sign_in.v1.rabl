@@ -9,5 +9,3 @@ child(:ship_address => :ship_address) do
   extends "spree/api/addresses/show"
 end
 
-object @store  
-attributes :goshippo_api
