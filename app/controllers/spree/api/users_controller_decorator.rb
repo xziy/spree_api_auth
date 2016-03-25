@@ -23,7 +23,6 @@ module Spree
       end
 
       def sign_in
-        @store = Spree::Store.first
         @user = Spree::User.find_by_email(params[:user][:email])
         if !@user.present? || !@user.valid_password?(params[:user][:password])
           unauthorized
